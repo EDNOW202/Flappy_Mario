@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Mario</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #30c0df; /* Color de fondo */
+            font-family: Arial, sans-serif;
+        }
+        #canvas {
+            display: none; /* Ocultar canvas hasta que inicie */
+        }
+        #inicio {
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="inicio">Click para iniciar <strong>Flappy Mario!</strong></div>
+    <canvas id="canvas" width="480" height="640"></canvas>
+
+    <script>
+        const inicio = document.getElementById("inicio");
+        const canvas = document.getElementById("canvas");
+
+        inicio.addEventListener("click", () => {
+            inicio.style.display = "none";
+            canvas.style.display = "block";
+
+        
+            const script = document.createElement("script");
+            script.src = "juego.js"; 
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
